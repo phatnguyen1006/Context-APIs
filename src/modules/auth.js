@@ -3,9 +3,9 @@ export function authenticate (email, password) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({
-        name: 'Phuc Pham',
-        dateOfBirth: '13/01/2001',
-        email: 'devnight@gmail.com',
+        name: 'Nguyen Trong Phat',
+        dateOfBirth: '01/01/1998',
+        email: 'phatnguyen876@gmail.com',
         secretQuestion: 'Joji?',
         secretAnswer: 'Mr.Hollywood'
       })
