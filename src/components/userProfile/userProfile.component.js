@@ -84,6 +84,20 @@ const UserProfile = () => {
           />
 
           <img src={data[0].avatar} width="371px" height="670px" />
+          <TextField
+            label='secret question'
+            value={secretQuestion}
+            onChange={e => {
+              setUserDetails({ secretQuestion: e.target.value })
+            }}
+          />
+          <TextField
+            label='secret answer'
+            value={secretAnswer}
+            onChange={e => {
+              setUserDetails({ secretAnswer: e.target.value })
+            }}
+          />
         </FieldWrappers>
       </Wrapper>) : (<Loader />)
     }
