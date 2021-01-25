@@ -20,7 +20,7 @@ const Login = () => {
    * For the purposes of this demo email and password are stored in state
    * to allow easy access for sending to the pretend auth endpoint.
    */
-  const [email] = useState('phucpham1301@gmail.com')
+  const [email] = useState('phatnguyen876@gmail.com')
   const [password] = useState('webdev')
 
   const authenticateUser = () => {
