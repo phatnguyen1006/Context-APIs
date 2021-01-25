@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState,useContext, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -22,8 +22,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function ButtonAppBar({ children }) {
-    const { state, dispatch } = useContext(ThemeContext)
+  const { state, dispatch } = useContext(ThemeContext)
+  const [ demo, setDemo] = useState(true)
     const classes = useStyles();
     const changeColor = () => {
         dispatch({
@@ -33,6 +36,49 @@ export default function ButtonAppBar({ children }) {
             }
         })
     }
+  
+    
+  
+  // componentsDidUpdate
+  // Moi khi components tac dong den cay DOM / UI
+  // Do khi co 1 state thay doi
+
+  // useEffect(() => {
+  //   console.log("Effected!!")
+  // })
+// --------------------------------------------
+
+  // componentsDidMount
+  // Dependencies array - Nhan cac bien 
+  // Components code 
+  // Quyet dinh Code chay hay khong
+  // Tuy thuoc vao bien
+  // Khong phu thuoc vao ai khi de mang rong~, chi chay Effect 1 lan
+
+  // useEffect(() => {
+  //   console.log("Effected!!")
+  //   // setDemo(false)
+  // }, [])
+// ----------------------------------------------
+
+  // componentsWillMount
+  // Update khi co dieu kien, dependency
+  // demo thay doi thi render lai ham duoi
+
+  // useEffect(() => {
+  //   console.log("re-render Effected!!")
+  // }, [demo])
+// -----------------------------------------------
+
+  // componentsWillUnMount
+  // Đảm bảo các State cũ đã được hủy
+  // Thường xài cho các hành động cập nhật State liên tục
+  // Chat app...
+
+  // useEffect(() => {
+  //   // clean up
+  // })
+// ----------------------------------------------
 
     return (
     <>
@@ -43,7 +89,7 @@ export default function ButtonAppBar({ children }) {
                 <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" className={classes.title}>
-                News
+                NTP
                 </Typography>
                 <Button color="inherit">Login</Button>
             </Toolbar>

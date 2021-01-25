@@ -1,13 +1,14 @@
-import React, { createContext, useContext, useReducer } from 'react'
+import React, { createContext, useReducer } from 'react'
 
 export const ThemeContext = createContext() 
 
 
-//
+// Step 1:
 const INITIAL_VALUE = {
-    color: 'red'
+    color: "red"
 }
 
+// Step 2
 const reducer = (state, action) => {
     switch (action.type) {
         case 'CHANGE':
